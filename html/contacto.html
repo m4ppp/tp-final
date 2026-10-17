@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacto | Vector Automotores</title>
+    <meta name="description"
+        content="Contactá a Vector Automotores para consultar por un auto, una financiación o una visita a la sucursal.">
+    <meta name="theme-color" content="#b3202a">
+    <link rel="icon" type="image/svg+xml" href="../img/iconos/marca.svg">
+    <link rel="apple-touch-icon" href="../img/iconos/icono-180.png">
+    <link rel="manifest" href="../img/iconos/manifest.webmanifest">
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <header class="sitio-header">
+        <div class="contenedor nav-interno">
+            <a class="marca" href="../main/index.html" aria-label="Vector Automotores, ir al inicio"><img
+                    src="../img/iconos/marca.svg" alt="" width="38" height="38"><span class="marca-texto"><span
+                        class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a>
+            <nav class="nav-principal" aria-label="Principal">
+                <ul class="nav-links">
+                    <li><a class="" href="../main/index.html">Inicio</a></li>
+                    <li><a class="" href="catalogo.html">Catálogo</a></li>
+                    <li><a class="" href="comparador.html">Comparador</a></li>
+                    <li><a class="" href="quiz.html">Quiz</a></li>
+                    <li><a class="" href="nosotros.html">Nosotros</a></li>
+                    <li><a class="boton boton-chico activo-btn" href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="menu-boton sidenav-trigger" data-target="menu-movil" aria-label="Abrir menú"><i
+                    class="material-icons">menu</i></button>
+        </div>
+    </header>
+    <ul class="sidenav" id="menu-movil">
+        <li class="sidenav-cabecera"><a class="marca" href="../main/index.html"><img src="../img/iconos/marca.svg"
+                    alt="" width="38" height="38"><span class="marca-texto"><span
+                        class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a></li>
+        <li><a class="waves-effect" href="../main/index.html"><i class="material-icons">home</i>Inicio</a></li>
+        <li><a class="waves-effect" href="catalogo.html"><i class="material-icons">directions_car</i>Catálogo</a></li>
+        <li><a class="waves-effect" href="comparador.html"><i class="material-icons">compare_arrows</i>Comparador</a>
+        </li>
+        <li><a class="waves-effect" href="quiz.html"><i class="material-icons">help_center</i>Quiz</a></li>
+        <li><a class="waves-effect" href="nosotros.html"><i class="material-icons">storefront</i>Nosotros</a></li>
+        <li><a class="waves-effect activo" href="contacto.html"><i class="material-icons">mail</i>Contacto</a></li>
+    </ul>
+    <section class="cabecera-pagina">
+        <div class="contenedor">
+            <nav class="migas" aria-label="Ruta de navegación"><a href="../main/index.html">Inicio</a><i
+                    class="material-icons">chevron_right</i><span>Contacto</span></nav>
+            <h1>Contacto</h1>
+            <p>Escribinos tu consulta y un asesor se comunicará con vos a la brevedad.</p>
+        </div>
+    </section>
+    <main>
+        <section class="seccion seccion-chica">
+            <div class="contenedor contacto-layout">
+                <div class="tarjeta">
+                    <form id="form-contacto" novalidate>
+                        <h2 class="form-titulo">Dejanos tu consulta</h2>
+                        <p class="form-ayuda">Los campos marcados con <span class="req">*</span> son obligatorios.</p>
+                        <div class="campo"><label for="c-nombre">Nombre y apellido <span
+                                    class="req">*</span></label><input type="text" id="c-nombre"
+                                class="browser-default campo-input" autocomplete="name" placeholder="Ej: Juan Pérez"
+                                required aria-describedby="e-nombre">
+                            <p class="campo-error" id="e-nombre"><i class="material-icons">error_outline</i>Ingresá tu
+                                nombre y apellido.</p>
+                        </div>
+                        <div class="campo-fila">
+                            <div class="campo"><label for="c-telefono">Teléfono <span class="req">*</span></label><input
+                                    type="tel" id="c-telefono" class="browser-default campo-input" autocomplete="tel"
+                                    placeholder="Ej: 11 5555 0100" required aria-describedby="e-telefono">
+                                <p class="campo-error" id="e-telefono"><i
+                                        class="material-icons">error_outline</i>Ingresá un teléfono válido (entre 8 y 13
+                                    dígitos).</p>
+                            </div>
+                            <div class="campo"><label for="c-email">Correo electrónico <span
+                                        class="req">*</span></label><input type="email" id="c-email"
+                                    class="browser-default campo-input" autocomplete="email"
+                                    placeholder="Ej: juan@correo.com" required aria-describedby="e-email">
+                                <p class="campo-error" id="e-email"><i class="material-icons">error_outline</i>Ingresá
+                                    un correo electrónico válido.</p>
+                            </div>
+                        </div>
+                        <div class="campo"><label for="c-auto">Auto de interés</label><select id="c-auto"
+                                class="browser-default campo-select"></select></div>
+                        <div class="campo"><label for="c-comentarios">Comentarios <span
+                                    class="req">*</span></label><textarea id="c-comentarios"
+                                class="browser-default campo-area" maxlength="500"
+                                placeholder="Contanos qué necesitás saber" required
+                                aria-describedby="e-comentarios"></textarea>
+                            <div class="campo-pie">
+                                <p class="campo-error" id="e-comentarios"><i
+                                        class="material-icons">error_outline</i>Escribí al menos 10 caracteres.</p><span
+                                    class="contador-caracteres" id="c-contador">0 / 500</span>
+                            </div>
+                        </div>
+                        <div class="form-botones"><button type="submit" class="boton" id="c-enviar"><i
+                                    class="material-icons">send</i>Enviar consulta</button><button type="reset"
+                                class="boton boton-secundario">Limpiar</button></div>
+                    </form>
+                    <div class="exito" id="contacto-exito" tabindex="-1" hidden>
+                        <i class="material-icons">check_circle</i>
+                        <h2>¡Gracias, <span id="exito-nombre"></span>!</h2>
+                        <p>Recibimos tu consulta<span id="exito-auto"></span>. Te vamos a responder a <strong
+                                id="exito-email"></strong>.</p>
+                        <button type="button" class="boton boton-secundario" id="c-otra">Enviar otra consulta</button>
+                    </div>
+                </div>
+                <aside class="lateral" aria-label="Información de contacto">
+                    <div class="tarjeta consultado" id="auto-consultado" hidden><span class="filtro-titulo">Auto
+                            consultado</span><img src="" alt="" width="316" height="154">
+                        <h3 class="consultado-nombre"></h3>
+                        <p class="consultado-detalle"></p>
+                        <p class="precio-valor consultado-precio"></p>
+                    </div>
+                    <div class="tarjeta">
+                        <h2 class="lateral-titulo">Datos de contacto</h2>
+                        <ul class="datos-lista">
+                            <li><i class="material-icons">call</i>
+                                <div><strong>Teléfono</strong><span>(011) 5555-0100</span></div>
+                            </li>
+                            <li><i class="material-icons">mail</i>
+                                <div><strong>Correo</strong><span>contacto@vectorautomotores.com.ar</span></div>
+                            </li>
+                            <li><i class="material-icons">place</i>
+                                <div><strong>Sucursal</strong><span>Buenos Aires, Argentina</span></div>
+                            </li>
+                            <li><i class="material-icons">schedule</i>
+                                <div><strong>Horarios</strong><span>Lunes a viernes de 9 a 19 h<br>Sábados de 9 a 14
+                                        h</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tarjeta">
+                        <h2 class="lateral-titulo">Antes de consultar</h2>
+                        <p class="lateral-texto">Podés revisar el catálogo o comparar dos modelos para llegar con las
+                            dudas más claras.</p>
+                        <div class="lateral-links"><a href="catalogo.html"><i
+                                    class="material-icons">directions_car</i>Ver catálogo</a><a
+                                href="comparador.html"><i class="material-icons">compare_arrows</i>Comparar autos</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer class="pie">
+        <div class="contenedor">
+            <div class="pie-grid">
+                <div>
+                    <a class="marca marca-clara" href="../main/index.html"><img src="../img/iconos/marca.svg" alt=""
+                            width="38" height="38"><span class="marca-texto"><span
+                                class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a>
+                    <p class="pie-texto">Autos usados y seminuevos seleccionados, con información clara y asesoramiento
+                        personalizado.</p>
+                </div>
+                <div>
+                    <h4>Secciones</h4>
+                    <ul>
+                        <li><a href="../main/index.html">Inicio</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul class="pie-contacto">
+                        <li><i class="material-icons">call</i>(011) 5555-0100</li>
+                        <li><i class="material-icons">mail</i>contacto@vectorautomotores.com.ar</li>
+                        <li><i class="material-icons">schedule</i>Lun a Vie 9 a 19 h · Sáb 9 a 14 h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pie-base"><span>&copy; <span data-anio-actual>2026</span> Vector Automotores. Proyecto
+                    escolar.</span><span>Los datos de los vehículos son de referencia.</span></div>
+        </div>
+    </footer>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/autos.js"></script>
+    <script src="../js/comun.js"></script>
+    <script src="../js/contacto.js"></script>
+</body>
+
+</html>

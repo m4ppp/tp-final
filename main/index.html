@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicio | Vector Automotores</title>
+<meta name="description" content="Vector Automotores: concesionaria de autos usados y seminuevos con catálogo, comparador y financiación.">
+<meta name="theme-color" content="#b3202a">
+<link rel="icon" type="image/svg+xml" href="../img/iconos/marca.svg">
+<link rel="apple-touch-icon" href="../img/iconos/icono-180.png">
+<link rel="manifest" href="../img/iconos/manifest.webmanifest">
+<link rel="stylesheet" href="../css/materialize.min.css">
+<link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+<header class="sitio-header">
+<div class="contenedor nav-interno">
+<a class="marca" href="index.html" aria-label="Vector Automotores, ir al inicio"><img src="../img/iconos/marca.svg" alt="" width="38" height="38"><span class="marca-texto"><span class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a>
+<nav class="nav-principal" aria-label="Principal"><ul class="nav-links"><li><a class="activo" href="index.html" aria-current="page">Inicio</a></li><li><a class="" href="../html/catalogo.html">Catálogo</a></li><li><a class="" href="../html/comparador.html">Comparador</a></li><li><a class="" href="../html/quiz.html">Quiz</a></li><li><a class="" href="../html/nosotros.html">Nosotros</a></li><li><a class="boton boton-chico" href="../html/contacto.html">Contacto</a></li></ul></nav>
+<button type="button" class="menu-boton sidenav-trigger" data-target="menu-movil" aria-label="Abrir menú"><i class="material-icons">menu</i></button>
+</div>
+</header>
+<ul class="sidenav" id="menu-movil">
+<li class="sidenav-cabecera"><a class="marca" href="index.html"><img src="../img/iconos/marca.svg" alt="" width="38" height="38"><span class="marca-texto"><span class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a></li>
+<li><a class="waves-effect activo" href="index.html"><i class="material-icons">home</i>Inicio</a></li><li><a class="waves-effect" href="../html/catalogo.html"><i class="material-icons">directions_car</i>Catálogo</a></li><li><a class="waves-effect" href="../html/comparador.html"><i class="material-icons">compare_arrows</i>Comparador</a></li><li><a class="waves-effect" href="../html/quiz.html"><i class="material-icons">help_center</i>Quiz</a></li><li><a class="waves-effect" href="../html/nosotros.html"><i class="material-icons">storefront</i>Nosotros</a></li><li><a class="waves-effect" href="../html/contacto.html"><i class="material-icons">mail</i>Contacto</a></li>
+</ul>
+<main>
+<section class="hero">
+<div class="contenedor hero-grid">
+<div>
+<span class="eyebrow">Vector Automotores</span>
+<h1>Elegí tu próximo auto con información clara.</h1>
+<p class="lead">Una concesionaria de autos usados y seminuevos de las marcas más elegidas del país. Precios publicados, fichas completas y un comparador para decidir con datos.</p>
+<div class="hero-acciones">
+<a class="boton" href="../html/catalogo.html"><i class="material-icons">directions_car</i>Ver catálogo</a>
+<a class="boton boton-claro" href="../html/comparador.html"><i class="material-icons">compare_arrows</i>Comparar autos</a>
+</div>
+<dl class="hero-datos">
+<div class="dato"><dt>Unidades disponibles</dt><dd id="dato-unidades">17</dd></div>
+<div class="dato"><dt>Marcas</dt><dd id="dato-marcas">9</dd></div>
+<div class="dato"><dt>Con financiación</dt><dd id="dato-financiados">11</dd></div>
+</dl>
+</div>
+<div class="rapido" aria-labelledby="rapido-titulo">
+<span class="eyebrow">Comparador</span>
+<h2 id="rapido-titulo">Compará dos autos</h2>
+<p>Elegí dos modelos del catálogo y mirá precio, potencia, año y kilometraje lado a lado.</p>
+<div class="campo"><label for="rapido-a">Primer auto</label><select id="rapido-a" class="browser-default campo-select"></select></div>
+<div class="campo"><label for="rapido-b">Segundo auto</label><select id="rapido-b" class="browser-default campo-select"></select></div>
+<p class="rapido-mensaje" id="rapido-mensaje" role="status"></p>
+<button type="button" class="boton boton-bloque" id="rapido-boton" disabled><i class="material-icons">compare_arrows</i>Comparar ahora</button>
+</div>
+</div>
+</section>
+
+<section class="seccion">
+<div class="contenedor">
+<div class="encabezado"><div><span class="eyebrow">Por qué elegirnos</span><h2>Una forma clara de comprar un auto</h2></div></div>
+<div class="valores">
+<article class="valor"><div class="icono"><i class="material-icons">fact_check</i></div><h3>Unidades seleccionadas</h3><p>Publicamos autos de marcas y modelos con buena demanda en el mercado argentino.</p></article>
+<article class="valor"><div class="icono"><i class="material-icons">price_check</i></div><h3>Precios a la vista</h3><p>Cada ficha muestra precio, año, kilometraje y características sin letra chica.</p></article>
+<article class="valor"><div class="icono"><i class="material-icons">account_balance</i></div><h3>Financiación</h3><p>Muchas unidades se pueden financiar en cuotas, y algunas hasta el 50% del valor.</p></article>
+<article class="valor"><div class="icono"><i class="material-icons">support_agent</i></div><h3>Asesoramiento</h3><p>Te acompañamos desde la consulta inicial hasta la transferencia del vehículo.</p></article>
+</div>
+</div>
+</section>
+
+<section class="seccion seccion-gris">
+<div class="contenedor">
+<div class="encabezado"><div><span class="eyebrow">Catálogo</span><h2>Autos destacados</h2><p>Una selección de las unidades más consultadas. Tocá un auto para ver su ficha completa.</p></div><a class="boton boton-secundario" href="../html/catalogo.html">Ver todo el catálogo<i class="material-icons">arrow_forward</i></a></div>
+<div class="destacados">
+<div class="carousel" id="carrusel-destacados"></div>
+<div class="carrusel-controles">
+<button type="button" class="control-redondo" id="carrusel-prev" aria-label="Auto anterior"><i class="material-icons">chevron_left</i></button>
+<div class="puntos" id="carrusel-puntos"></div>
+<button type="button" class="control-redondo" id="carrusel-next" aria-label="Auto siguiente"><i class="material-icons">chevron_right</i></button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="seccion">
+<div class="contenedor">
+<div class="encabezado"><div><span class="eyebrow">Comparador</span><h2>Compará antes de decidir</h2><p>Estos son algunos de los duelos más pedidos. Cada comparación resalta qué auto conviene en precio, potencia, año y kilometraje.</p></div><a class="boton" href="../html/comparador.html">Abrir el comparador<i class="material-icons">arrow_forward</i></a></div>
+<div class="duelos">
+<a class="duelo" href="../html/comparador.html?a=5&b=17"><span class="duelo-tema">Sedanes medianos</span><div class="duelo-autos"><figure><img src="../img/autos/toyota-corolla-2022.jpg" alt="Toyota Corolla 2022"><figcaption>Toyota Corolla</figcaption></figure><span class="duelo-vs">VS</span><figure><img src="../img/autos/chevrolet-cruze-2022.jpg" alt="Chevrolet Cruze 2022"><figcaption>Chevrolet Cruze</figcaption></figure></div><span class="duelo-pie">Ver comparación<i class="material-icons">arrow_forward</i></span></a>
+<a class="duelo" href="../html/comparador.html?a=2&b=15"><span class="duelo-tema">SUV compactos</span><div class="duelo-autos"><figure><img src="../img/autos/kia-k3-cross-2025.jpg" alt="Kia K3 Cross 2025"><figcaption>Kia K3 Cross</figcaption></figure><span class="duelo-vs">VS</span><figure><img src="../img/autos/renault-kardian-2024.jpg" alt="Renault Kardian 2024"><figcaption>Renault Kardian</figcaption></figure></div><span class="duelo-pie">Ver comparación<i class="material-icons">arrow_forward</i></span></a>
+<a class="duelo" href="../html/comparador.html?a=10&b=7"><span class="duelo-tema">Opciones accesibles</span><div class="duelo-autos"><figure><img src="../img/autos/fiat-cronos-2022.jpg" alt="Fiat Cronos 2022"><figcaption>Fiat Cronos</figcaption></figure><span class="duelo-vs">VS</span><figure><img src="../img/autos/toyota-yaris-2021.jpg" alt="Toyota Yaris 2021"><figcaption>Toyota Yaris</figcaption></figure></div><span class="duelo-pie">Ver comparación<i class="material-icons">arrow_forward</i></span></a>
+</div>
+</div>
+</section>
+
+<section class="seccion seccion-gris">
+<div class="contenedor">
+<div class="encabezado"><div><span class="eyebrow">Cómo comprar</span><h2>Tres pasos hasta tu auto</h2></div></div>
+<ol class="pasos">
+<li class="paso"><span class="paso-numero">1</span><h3>Elegí</h3><p>Explorá el catálogo, filtrá por marca, precio o carrocería y compará tus favoritos.</p></li>
+<li class="paso"><span class="paso-numero">2</span><h3>Consultá</h3><p>Escribinos por el formulario o acercate a la sucursal para ver la unidad y coordinar una prueba.</p></li>
+<li class="paso"><span class="paso-numero">3</span><h3>Retirá</h3><p>Definimos la forma de pago, gestionamos la documentación y te entregamos el auto.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="franja">
+<div class="contenedor franja-interno">
+<div><h2>¿No sabés qué auto te conviene?</h2><p>Respondé cuatro preguntas sobre tu uso y tu presupuesto, y te recomendamos opciones del catálogo.</p></div>
+<a class="boton boton-claro" href="../html/quiz.html">Hacer el quiz<i class="material-icons">arrow_forward</i></a>
+</div>
+</section>
+</main>
+<footer class="pie">
+<div class="contenedor">
+<div class="pie-grid">
+<div>
+<a class="marca marca-clara" href="index.html"><img src="../img/iconos/marca.svg" alt="" width="38" height="38"><span class="marca-texto"><span class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a>
+<p class="pie-texto">Autos usados y seminuevos seleccionados, con información clara y asesoramiento personalizado.</p>
+</div>
+<div><h4>Secciones</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="../html/catalogo.html">Catálogo</a></li><li><a href="../html/comparador.html">Comparador</a></li><li><a href="../html/quiz.html">Quiz</a></li><li><a href="../html/nosotros.html">Nosotros</a></li><li><a href="../html/contacto.html">Contacto</a></li></ul></div>
+<div><h4>Contacto</h4><ul class="pie-contacto">
+<li><i class="material-icons">call</i>(011) 5555-0100</li>
+<li><i class="material-icons">mail</i>contacto@vectorautomotores.com.ar</li>
+<li><i class="material-icons">schedule</i>Lun a Vie 9 a 19 h · Sáb 9 a 14 h</li>
+</ul></div>
+</div>
+<div class="pie-base"><span>&copy; <span data-anio-actual>2026</span> Vector Automotores. Proyecto escolar.</span><span>Los datos de los vehículos son de referencia.</span></div>
+</div>
+</footer>
+<script src="../js/materialize.min.js"></script>
+<script src="../js/autos.js"></script>
+<script src="../js/comun.js"></script>
+<script src="../js/inicio.js"></script>
+</body>
+</html>

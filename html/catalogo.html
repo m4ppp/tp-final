@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo | Vector Automotores</title>
+    <meta name="description"
+        content="Catálogo de autos usados y seminuevos de Vector Automotores con filtros por marca, precio y carrocería.">
+    <meta name="theme-color" content="#b3202a">
+    <link rel="icon" type="image/svg+xml" href="../img/iconos/marca.svg">
+    <link rel="apple-touch-icon" href="../img/iconos/icono-180.png">
+    <link rel="manifest" href="../img/iconos/manifest.webmanifest">
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+    <header class="sitio-header">
+        <div class="contenedor nav-interno">
+            <a class="marca" href="../main/index.html" aria-label="Vector Automotores, ir al inicio"><img
+                    src="../img/iconos/marca.svg" alt="" width="38" height="38"><span class="marca-texto"><span
+                        class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a>
+            <nav class="nav-principal" aria-label="Principal">
+                <ul class="nav-links">
+                    <li><a class="" href="../main/index.html">Inicio</a></li>
+                    <li><a class="activo" href="catalogo.html" aria-current="page">Catálogo</a></li>
+                    <li><a class="" href="comparador.html">Comparador</a></li>
+                    <li><a class="" href="quiz.html">Quiz</a></li>
+                    <li><a class="" href="nosotros.html">Nosotros</a></li>
+                    <li><a class="boton boton-chico" href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button type="button" class="menu-boton sidenav-trigger" data-target="menu-movil" aria-label="Abrir menú"><i
+                    class="material-icons">menu</i></button>
+        </div>
+    </header>
+    <ul class="sidenav" id="menu-movil">
+        <li class="sidenav-cabecera"><a class="marca" href="../main/index.html"><img src="../img/iconos/marca.svg"
+                    alt="" width="38" height="38"><span class="marca-texto"><span
+                        class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a></li>
+        <li><a class="waves-effect" href="../main/index.html"><i class="material-icons">home</i>Inicio</a></li>
+        <li><a class="waves-effect activo" href="catalogo.html"><i class="material-icons">directions_car</i>Catálogo</a>
+        </li>
+        <li><a class="waves-effect" href="comparador.html"><i class="material-icons">compare_arrows</i>Comparador</a>
+        </li>
+        <li><a class="waves-effect" href="quiz.html"><i class="material-icons">help_center</i>Quiz</a></li>
+        <li><a class="waves-effect" href="nosotros.html"><i class="material-icons">storefront</i>Nosotros</a></li>
+        <li><a class="waves-effect" href="contacto.html"><i class="material-icons">mail</i>Contacto</a></li>
+    </ul>
+    <section class="cabecera-pagina">
+        <div class="contenedor">
+            <nav class="migas" aria-label="Ruta de navegación"><a href="../main/index.html">Inicio</a><i
+                    class="material-icons">chevron_right</i><span>Catálogo</span></nav>
+            <h1>Catálogo de autos</h1>
+            <p>Filtrá por marca, carrocería, transmisión o precio, y guardá o compará los que más te gusten.</p>
+        </div>
+    </section>
+    <main>
+        <section class="seccion seccion-chica">
+            <div class="contenedor">
+                <div class="catalogo-layout">
+                    <aside class="filtros" id="filtros" aria-label="Filtros del catálogo">
+                        <div class="filtros-cabecera">
+                            <h2>Filtros</h2><button type="button" class="boton-texto" id="reiniciar-filtros">Quitar
+                                filtros</button>
+                        </div>
+                        <div class="filtro-grupo">
+                            <h3 class="filtro-titulo">Forma de pago</h3>
+                            <div id="grupo-modalidad"></div>
+                        </div>
+                        <div class="filtro-grupo">
+                            <h3 class="filtro-titulo">Marca</h3>
+                            <div id="grupo-marca"></div>
+                        </div>
+                        <div class="filtro-grupo">
+                            <h3 class="filtro-titulo">Carrocería</h3>
+                            <div id="grupo-carroceria"></div>
+                        </div>
+                        <div class="filtro-grupo">
+                            <div class="campo"><label for="f-transmision">Transmisión</label><select id="f-transmision"
+                                    class="browser-default campo-select">
+                                    <option value="todas">Todas</option>
+                                    <option value="Automática">Automática</option>
+                                    <option value="Manual">Manual</option>
+                                </select></div>
+                            <div class="campo"><label for="f-precio">Precio máximo</label><select id="f-precio"
+                                    class="browser-default campo-select">
+                                    <option value="0">Sin límite</option>
+                                    <option value="15000000">Hasta $ 15.000.000</option>
+                                    <option value="25000000">Hasta $ 25.000.000</option>
+                                    <option value="35000000">Hasta $ 35.000.000</option>
+                                </select></div>
+                        </div>
+                        <div class="filtro-grupo"><button type="button"
+                                class="boton boton-secundario boton-bloque boton-chico" id="solo-fav"
+                                aria-pressed="false"><i class="material-icons">favorite</i>Solo guardados (<span
+                                    id="conteo-fav">0</span>)</button></div>
+                        <div class="filtro-grupo filtro-accesos">
+                            <h3 class="filtro-titulo">Accesos</h3>
+                            <a href="comparador.html"><i class="material-icons">compare_arrows</i>Comparador</a>
+                            <a href="quiz.html"><i class="material-icons">help_center</i>Quiz: encontrá tu auto</a>
+                            <a href="contacto.html"><i class="material-icons">mail</i>Consultar por un auto</a>
+                        </div>
+                    </aside>
+                    <div>
+                        <div class="herramientas">
+                            <div class="buscador"><i class="material-icons">search</i><input type="search" id="buscador"
+                                    class="browser-default" placeholder="Buscar por marca, modelo o versión"
+                                    aria-label="Buscar auto"></div>
+                            <div class="herramientas-der">
+                                <button type="button" class="boton boton-secundario boton-chico filtros-toggle"
+                                    id="filtros-toggle" aria-expanded="false" aria-controls="filtros"><i
+                                        class="material-icons">tune</i>Filtros</button>
+                                <select id="orden" class="browser-default campo-select campo-orden"
+                                    aria-label="Ordenar">
+                                    <option value="destacados">Destacados</option>
+                                    <option value="precio-asc">Menor precio</option>
+                                    <option value="precio-desc">Mayor precio</option>
+                                    <option value="km-asc">Menor kilometraje</option>
+                                    <option value="anio-desc">Más nuevos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="contador" id="contador" aria-live="polite"></p>
+                        <div class="autos-grid" id="autos-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="bandeja" id="bandeja" aria-label="Autos a comparar">
+        <div class="contenedor bandeja-interno">
+            <div class="bandeja-items" id="bandeja-items"></div>
+            <div class="bandeja-botones">
+                <button type="button" class="boton boton-claro boton-chico" id="bandeja-limpiar">Limpiar</button>
+                <button type="button" class="boton boton-chico" id="bandeja-ir" disabled><i
+                        class="material-icons">compare_arrows</i>Comparar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-ficha" class="modal" role="dialog" aria-labelledby="modal-titulo">
+        <div class="modal-cabecera">
+            <div><span class="auto-marca" id="modal-version"></span>
+                <h2 id="modal-titulo"></h2>
+            </div>
+            <button type="button" class="control-redondo modal-close" aria-label="Cerrar ficha"><i
+                    class="material-icons">close</i></button>
+        </div>
+        <div class="modal-content">
+            <div class="modal-resumen-grid">
+                <img id="modal-imagen" src="" alt="" width="316" height="154">
+                <div>
+                    <p id="modal-resumen" class="modal-texto"></p>
+                    <span class="precio-etiqueta" id="modal-etiqueta"></span>
+                    <div><span class="precio-valor precio-grande" id="modal-precio"></span><span class="precio-anterior"
+                            id="modal-anterior"></span></div>
+                    <div class="modal-acciones">
+                        <a class="boton" id="modal-consultar" href="contacto.html"><i
+                                class="material-icons">send</i>Consultar</a>
+                        <button type="button" class="boton boton-secundario" id="modal-comparar"></button>
+                        <button type="button" class="boton boton-secundario" id="modal-fav"></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="collapsible auto" id="modal-colapsable">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">list_alt</i>Especificaciones</div>
+                    <div class="collapsible-body">
+                        <table class="tabla-specs">
+                            <tbody id="modal-specs"></tbody>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">star_outline</i>Equipamiento destacado
+                    </div>
+                    <div class="collapsible-body">
+                        <ul class="lista-check" id="modal-destacados"></ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">account_balance</i>Financiación y
+                        documentación</div>
+                    <div class="collapsible-body">
+                        <p id="modal-financiacion"></p>
+                        <p class="modal-nota">La documentación de cada unidad se revisa antes de la entrega y la
+                            transferencia se gestiona con nuestro equipo.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="pie">
+        <div class="contenedor">
+            <div class="pie-grid">
+                <div>
+                    <a class="marca marca-clara" href="../main/index.html"><img src="../img/iconos/marca.svg" alt=""
+                            width="38" height="38"><span class="marca-texto"><span
+                                class="marca-nombre">VECTOR</span><span class="marca-sub">AUTOMOTORES</span></span></a>
+                    <p class="pie-texto">Autos usados y seminuevos seleccionados, con información clara y asesoramiento
+                        personalizado.</p>
+                </div>
+                <div>
+                    <h4>Secciones</h4>
+                    <ul>
+                        <li><a href="../main/index.html">Inicio</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul class="pie-contacto">
+                        <li><i class="material-icons">call</i>(011) 5555-0100</li>
+                        <li><i class="material-icons">mail</i>contacto@vectorautomotores.com.ar</li>
+                        <li><i class="material-icons">schedule</i>Lun a Vie 9 a 19 h · Sáb 9 a 14 h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pie-base"><span>&copy; <span data-anio-actual>2026</span> Vector Automotores. Proyecto
+                    escolar.</span><span>Los datos de los vehículos son de referencia.</span></div>
+        </div>
+    </footer>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/autos.js"></script>
+    <script src="../js/comun.js"></script>
+    <script src="../js/catalogo.js"></script>
+</body>
+
+</html>
