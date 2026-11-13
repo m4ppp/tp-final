@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ['rendimiento', 'Potencia y rendimiento', 'Mayor respuesta del motor.'],
       ['confort', 'Equipamiento y confort', 'Más tecnología y asistencias a bordo.'],
       ['reciente', 'Modelo reciente y pocos kilómetros', 'Una unidad más nueva y con menos uso.']
+    ] },
+    { titulo: '¿Tenés pelo?', clave: 'pelo', opciones: [
+      ['si', 'Sí', 'Todavía conservo mi cabellera.'],
+      ['no', 'No', 'Lo perdí hace tiempo.']
     ] }
   ];
   const RANGOS = { bajo: [0, 21000000], medio: [21000000, 32000000], alto: [32000000, Infinity], libre: [0, Infinity] };
@@ -100,7 +104,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function pintarResultadoBicimoto() {
+    caja.innerHTML = `
+      <div class="quiz-progreso"><span style="width:100%"></span></div>
+      <p class="quiz-paso">Resultado</p>
+      <h2 class="quiz-pregunta">Tu mejor opción es la Bicimoto</h2>
+      <div class="resultado-principal">
+        <img src="../img/autos/bicimoto.png" alt="Bicimoto">
+        <div class="resultado-cuerpo">
+          <span class="afinidad">Afinidad 100%</span>
+          <h3>Bicimoto</h3>
+          <ul class="razones">
+            <li><i class="material-icons">check</i>Sin pelo, no hay peinado que arruinar.</li>
+            <li><i class="material-icons">check</i>Ideal para cualquier uso y cualquier presupuesto.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="quiz-nav"><button type="button" class="boton boton-secundario" id="quiz-reiniciar"><i class="material-icons">refresh</i>Repetir el quiz</button><a class="boton" href="catalogo.html">Ver todo el catálogo<i class="material-icons">arrow_forward</i></a></div>`;
+    document.getElementById('quiz-reiniciar').addEventListener('click', () => {
+      Object.keys(respuestas).forEach((k) => delete respuestas[k]);
+      paso = 0;
+      pintarPregunta();
+    });
+  }
+
   function pintarResultado() {
+    if (respuestas.pelo === 'no') {
+      pintarResultadoBicimoto();
+      return;
+    }
     const ranking = AUTOS.map((a) => puntuar(a, respuestas)).sort((x, y) => y.puntos - x.puntos || x.auto.id - y.auto.id).slice(0, 3);
     const [mejor, ...otros] = ranking;
     const a = mejor.auto;
